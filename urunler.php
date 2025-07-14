@@ -33,8 +33,7 @@ include 'header.php';
     <nav class="modern-sidebar-nav">
       <ul>
         <li><a href="urunler.php">Tüm Ürünleri Gör</a></li>
-        <li><a href="#" id="sidebar-kategoriler-link">Kategoriler</a></li>
-        <li><a href="siparislerim.php">Siparişlerim</a></li>
+        <!-- Kategori menüsü sidebar'dan kaldırıldı -->
         <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] !== 'musteri'): ?>
           <li><a href="magazalarim.php">Mağazalarım</a></li>
           <li><a href="magaza_ac.php">Mağaza Aç</a></li>
@@ -43,6 +42,7 @@ include 'header.php';
           <li><a href="magaza_siparisleri.php">Mağaza Siparişleri</a></li>
         <?php endif; ?>
       </ul>
+      <!-- Kategori menüsü sidebar'dan kaldırıldı -->
     </nav>
   </aside>
   <main class="modern-main-content">

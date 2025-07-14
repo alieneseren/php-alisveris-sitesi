@@ -343,22 +343,7 @@ include 'header.php';
 <div class="product-description">
   <h2>Açıklama</h2>
   <p><?php echo nl2br(htmlspecialchars($urun['urun_aciklamasi'])); ?></p>
-</div>
-<div class="product-other-sellers">
-  <h3>Diğer Satıcılar</h3>
-  <div class="other-seller-box">
-    <span class="seller-name">Allintekno</span>
-    <span class="seller-rating">9.6</span>
-    <span class="seller-price">929,07 TL</span>
-    <a href="#" class="btn-secondary">Ürüne Git</a>
-  </div>
-  <div class="other-seller-box">
-    <span class="seller-name">Gelecek Market</span>
-    <span class="seller-rating">9.6</span>
-    <span class="seller-price">1.032,29 TL</span>
-    <a href="#" class="btn-secondary">Ürüne Git</a>
-  </div>
-</div>
+// Diğer satıcılar bölümü kaldırıldı veya devre dışı bırakıldı. Gereksiz PHP endif ve bloklar temizlendi.
 <div class="product-comments">
   <h2>Yorumlar</h2>
   <?php if (!$yorumlar): ?>

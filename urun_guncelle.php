@@ -5,7 +5,7 @@ if (!isset($_SESSION['kullanici_id'])) {
     exit;
 }
 require_once 'db.php';
-if ($_SESSION['rol'] !== 'satici') {
+if ($_SESSION['rol'] !== 'satici' && $_SESSION['rol'] !== 'admin' && $_SESSION['rol'] !== 'yonetici') {
     header('Location: index.php');
     exit;
 }
@@ -41,7 +41,7 @@ include 'header.php';
     <nav class="modern-sidebar-nav">
       <ul>
         <li><a href="urunler.php">Tüm Ürünleri Gör</a></li>
-        <li><a href="kategoriler.php">Kategoriler</a></li>
+        <!-- Kategoriler linki sidebar'dan kaldırıldı -->
         <li><a href="siparislerim.php">Siparişlerim</a></li>
         <li><a href="profil.php">Profilim</a></li>
       </ul>

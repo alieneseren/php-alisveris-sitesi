@@ -11,23 +11,18 @@ include 'header.php';
     <nav class="modern-sidebar-nav">
       <ul>
         <li><a href="urunler.php">Tüm Ürünleri Gör</a></li>
-        <li class="dropdown" id="sidebar-kategori-dropdown">
-          <a href="#" class="dropdown-toggle" id="sidebarKategoriDropdownBtn">Kategoriler <span style="font-size:1.1em;">▼</span></a>
-          <ul class="dropdown-menu" id="sidebarKategoriDropdownMenu" style="display:none;position:absolute;z-index:999;background:#fff;box-shadow:0 4px 16px rgba(67,97,238,0.10);border-radius:12px;padding:0.5rem 0;min-width:180px;">
-            <!-- Kategoriler JS ile yüklenecek -->
-          </ul>
-        </li>
-        <?php if ($_SESSION['rol'] === 'musteri'): ?>
+        <!-- Kategori menüsü sidebar'dan kaldırıldı -->
+        <?php if ($_SESSION['rol'] === 'musteri' || $_SESSION['rol'] === 'yonetici' || $_SESSION['rol'] === 'admin'): ?>
           <li><a href="siparislerim.php">Siparişlerim</a></li>
         <?php endif; ?>
-        <?php if ($_SESSION['rol'] === 'satici'): ?>
+        <?php if ($_SESSION['rol'] === 'satici' || $_SESSION['rol'] === 'yonetici' || $_SESSION['rol'] === 'admin'): ?>
           <li><a href="magazalarim.php">Mağazalarım</a></li>
           <li><a href="magaza_ac.php">Mağaza Aç</a></li>
           <li><a href="urun_ekle.php">Ürün Ekle</a></li>
           <li><a href="urunlerim.php">Ürünlerim</a></li>
           <li><a href="magaza_siparisleri.php">Mağaza Siparişleri</a></li>
         <?php endif; ?>
-        <?php if ($_SESSION['rol'] === 'admin'): ?>
+        <?php if ($_SESSION['rol'] === 'admin' || $_SESSION['rol'] === 'yonetici'): ?>
           <li><a href="kullanicilar.php">Kullanıcılar</a></li>
         <?php endif; ?>
       </ul>

@@ -1,0 +1,79 @@
+2025-07-11 15:13:17 - LOGIN RESPONSE: Array
+(
+    [status] => success
+    [message] => Token created successfully.
+    [meta] => Array
+        (
+            [timestamp] => 2025-07-11 13:13:16
+            [request_id] => 197f99e622b-5cb
+            [code] => 1
+        )
+
+    [data] => Array
+        (
+            [token_string] => token_WnJkM3NvM0tnakNNemR2bjUrMUIrSkNmRWFnOERxdUM4N1ZvZERWb2ZqQ05raUNHWFVDUXU3WThPOTJZOWhTSTJ5aGtjSGVQVWxVeW42WmNpMHc1ZHc9PQ
+            [token_type] => time_limited
+            [expire_date] => 2025-09-05 13:13:16
+            [status] => validation
+            [verification_method] => email
+            [firstname] => Ali Enes
+            [lastname] => Eren
+            [email] => alieneseren@windowslive.com
+            [id_user] => user_SmNQZWN4YTNMTG1OU25qQ09Tcmo3UT09
+            [user_level] => admin
+            [last_login] => 2025-07-11 13:13:17
+            [id_merchant] => 2457801
+            [merchantname] => Alen Yazılım
+            [app] => 102
+        )
+
+)
+
+2025-07-11 15:18:10 - LOGIN RESPONSE: Array
+(
+    [status] => success
+    [message] => Token created successfully.
+    [meta] => Array
+        (
+            [timestamp] => 2025-07-11 13:18:09
+            [request_id] => 197f9a2dbde-16f9
+            [code] => 1
+        )
+
+    [data] => Array
+        (
+            [token_string] => token_eTJLWjVSclZRUHd3YXRFWFM4SXI4d2V5WTNBNVNSN3BRV2ZWTlpqUFpuZUloR3ArQkR4ZWszcHhCYkQ3L1N3R21BZmdxT3VtSnNxN3FMZUhzYUtOaGc9PQ
+            [token_type] => time_limited
+            [expire_date] => 2025-09-05 13:18:09
+            [status] => validation
+            [verification_method] => email
+            [firstname] => Ali Enes
+            [lastname] => Eren
+            [email] => alieneseren@windowslive.com
+            [id_user] => user_SmNQZWN4YTNMTG1OU25qQ09Tcmo3UT09
+            [user_level] => admin
+            [last_login] => 2025-07-11 13:18:10
+            [id_merchant] => 2457801
+            [merchantname] => Alen Yazılım
+            [app] => 102
+        )
+
+)
+
+2025-07-11 15:18:33 - OTP RESPONSE: Array
+(
+    [status] => success
+    [message] => OTP verified successfully
+    [meta] => Array
+        (
+            [timestamp] => 2025-07-11 13:18:33
+            [request_id] => 197f9a33afd-1ffe
+            [code] => 1
+        )
+
+    [data] => Array
+        (
+        )
+
+)
+

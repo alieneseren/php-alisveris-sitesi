@@ -1,20 +1,6 @@
 // Sepete ekle butonu için event
 document.addEventListener('DOMContentLoaded', function() {
-  // Kategori dropdown açılır menü
-  fetch('kategori_listesi.php')
-    .then(res => res.json())
-    .then(data => {
-      const menu = document.getElementById('kategoriDropdownMenu');
-      if (menu && Array.isArray(data)) {
-        menu.innerHTML = '';
-        data.forEach(kat => {
-          const li = document.createElement('li');
-          li.style.listStyle = 'none';
-          li.innerHTML = `<a href="#" class="dropdown-item" data-kategori-id="${kat.id}" style="display:block;padding:0.7rem 1.2rem;color:#222;text-decoration:none;">${kat.kategori_adi}</a>`;
-          menu.appendChild(li);
-        });
-      }
-    });
+  // Kategori dropdown açılır menü (PHP ile render edilen menüde JS ile ekleme yapılmaz)
 
   const dropdownBtn = document.getElementById('kategoriDropdownBtn');
   const dropdownMenu = document.getElementById('kategoriDropdownMenu');
@@ -23,22 +9,29 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
     });
-    document.addEventListener('click', function(e) {
-      if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
-        dropdownMenu.style.display = 'none';
-      }
-    });
-    dropdownMenu.addEventListener('click', function(e) {
-      if (e.target.classList.contains('dropdown-item')) {
+    // Ana kategoriye tıklanınca sadece ona ait alt menü açılır, diğerleri kapanır
+    document.querySelectorAll('.dropdown-submenu > .ana-kategori').forEach(function(el) {
+      el.addEventListener('click', function(e) {
         e.preventDefault();
-        const kategoriId = e.target.getAttribute('data-kategori-id');
-        // Sadece anasayfada AJAX, diğer sayfalarda yönlendirme
-        if (window.location.pathname.endsWith('index.php') || window.location.pathname === '/' || window.location.pathname === '/index.php') {
-          window.dispatchEvent(new CustomEvent('kategoriSecildi', { detail: { kategoriId } }));
-        } else {
-          window.location.href = 'urunler.php?kategori_id=' + encodeURIComponent(kategoriId);
+        const parentLi = this.parentElement;
+        const subMenu = parentLi.querySelector('.dropdown-menu-sub');
+        // Diğer tüm alt menüleri kapat
+        document.querySelectorAll('.dropdown-menu-sub').forEach(function(menu) {
+          if (menu !== subMenu) menu.style.display = 'none';
+        });
+        // Sadece tıklananın alt menüsünü aç/kapat
+        if (subMenu) {
+          subMenu.style.display = (subMenu.style.display === 'block') ? 'none' : 'block';
         }
+      });
+    });
+    // Menü dışına tıklanınca tüm alt menüleri kapat
+    document.addEventListener('click', function(e) {
+      if (!dropdownMenu.contains(e.target) && e.target !== dropdownBtn) {
         dropdownMenu.style.display = 'none';
+        document.querySelectorAll('.dropdown-menu-sub').forEach(function(sub) {
+          sub.style.display = 'none';
+        });
       }
     });
   }
