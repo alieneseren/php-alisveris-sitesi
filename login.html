@@ -1,0 +1,25 @@
+<?php include 'header.php'; ?>
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow-sm mt-5">
+                <div class="card-body">
+                    <h3 class="card-title mb-4 text-center">Giriş Yap</h3>
+                    <form action="login.php" method="post">
+                        <div class="mb-3">
+                            <label class="form-label">E-posta</label>
+                            <input type="email" name="eposta" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Şifre</label>
+                            <input type="password" name="sifre" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Giriş Yap</button>
+                    </form>
+                    <div class="mt-3 text-center">
+                        <span>Hesabınız yok mu? <a href="register.html">Kayıt Ol</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php include 'footer.php'; ?>
